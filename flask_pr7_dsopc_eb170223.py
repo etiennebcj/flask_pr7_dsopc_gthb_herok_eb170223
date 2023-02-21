@@ -59,9 +59,6 @@ def show_prediction():
 			'Default probability %' : (round(float(1-result)*100, 0))})
 
 
-
-
-
 # Dataframe HTML
 @app.route('/main/view dataframe', methods=['GET'])
 def showData():
