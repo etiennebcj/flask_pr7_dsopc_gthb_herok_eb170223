@@ -72,7 +72,7 @@ def data_json():
 	return jsonify({'data top 50': data_top.to_dict()}) # top X, risque de plantage si trop de données à charger
 
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 	# app.run()
-	#app.run(debug=True)
+	app.run(debug=True)
     # app.run(host="localhost", port="5000", debug=True)
