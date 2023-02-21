@@ -39,11 +39,17 @@ sample_id = data_predictop_reset[['SK_ID_CURR']]
 
 #------------------------------------------------------------------------
 # Ajax home
-@app.route('/main')
+@app.route('/')
 def show_main():
 	return render_template('prediction.html')
-	
-	
+
+
+# Exemple des ID client
+@app.route("/main/view ids", methods=["GET"])
+def load_data():
+    return sample_id.to_json(orient='values')
+
+
 # Ajax predict
 @app.route('/main/predict')
 def show_prediction(): 
@@ -53,10 +59,7 @@ def show_prediction():
 			'Default probability %' : (round(float(1-result)*100, 0))})
 
 
-# Exemple des ID client
-@app.route("/main/view ids", methods=["GET"])
-def load_data():
-    return sample_id.to_json(orient='values')
+
 
 
 # Dataframe HTML
